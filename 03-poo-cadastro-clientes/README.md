@@ -32,11 +32,17 @@ O objetivo é construir um sistema simples de **cadastro de clientes** utilizand
 
 src/
 ├── entidades/
+
 │    └── Cliente.java        # Classe de entidade (modela os dados do cliente)
+
 ├── repositorios/
+
 │    └── ClienteRepositorio.java   # Classe responsável por gravar dados em arquivo TXT
+
 └── principal/
+
 └── Main.java           # Classe principal que executa o sistema
+
 ---
 
 ## ▶️ Como executar
@@ -61,6 +67,4 @@ src/
 
 ---
 
-## ✍️ Autor
-
-Desenvolvido por **Marcus Rodrigues** como parte do curso *Java WebDeveloper FullStack*.
+Desenvolvido por **Marcus Rodrigues** como parte do curso *Java WebDeveloper FullStack - Coti Informática*.
