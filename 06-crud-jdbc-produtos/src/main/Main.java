@@ -11,7 +11,7 @@ public class Main {
 			//Executando o cadastro do produto
 			var produtoController = new ProdutoController();
 			//produtoController.cadastrarProduto();
-			produtoController.atualizarProduto();
+			produtoController.gerenciarProdutos();
 		} 
 		catch (Exception e) {
 			System.out.println("\nFALHA: " + e.getMessage());
