@@ -1,0 +1,46 @@
+services:
+
+  financasapi:
+    container_name: spring_financasapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    networks:
+      - financasApi_network
+    depends_on:
+      - postgres
+      - mongodb
+  postgres:
+    image: postgres:16
+    container_name: postgres_financasapi
+    environment:
+      POSTGRES_DB: bd_financasApi
+      POSTGRES_USER: coti_user
+      POSTGRES_PASSWORD: coti_password
+    ports:
+      - "5436:5432"
+    networks:
+      - financasApi_network
+
+  mongodb:
+    image: mongo:7
+    container_name: mongo_financasapi
+    restart: always
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: coti_user
+      MONGO_INITDB_ROOT_PASSWORD: coti_password
+    networks:
+      - financasApi_network
+    volumes:
+      - mongo_data:/data/db
+
+networks:
+  financasApi_network:
+    driver: bridge
+
+volumes:
+  mongo_data:
