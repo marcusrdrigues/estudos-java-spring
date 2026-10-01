@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: financasApi
+  datasource:
+    url: jdbc:postgresql://postgres:5432/bd_financasApi
+    username: coti_user
+    password: coti_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  data:
+    mongodb:
+      uri: mongodb://coti_user:coti_password@mongodb:27017/bd_financasApi?authSource=admin
+      database: bd_financasApi
+
